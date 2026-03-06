@@ -13,8 +13,8 @@ export async function PUT(
   const { id } = await context.params
   const eventId = parseInt(id)
 
-  const startDateTime = new Date(`${body.eventDate}T${body.startTime}`)
-  const endDateTime = new Date(`${body.eventDate}T${body.endTime}`)
+  const startDateTime = new Date(`${body.eventDate}T${body.startTime}:00+07:00`)
+  const endDateTime = new Date(`${body.eventDate}T${body.endTime}:00+07:00`)
   const updatedEvent = await prisma.event.update({
     where: { id: eventId },
     data: {

@@ -24,10 +24,18 @@ export default function EditEventPage() {
         setLocation(data.location)
         setFloor(String(data.floor))
         setEventDate(data.eventDate.split("T")[0])
-
-        setStartTime(data.startTime.slice(0, 16))
-        setEndTime(data.endTime.slice(0, 16))
+        
+        const toWIBTime = (utcString: string) => {
+        return new Date(utcString).toLocaleTimeString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+            timeZone: "Asia/Jakarta",
+        })
         }
+
+        setStartTime(toWIBTime(data.startTime))
+        setEndTime(toWIBTime(data.endTime))
+    }
 
         if (id) fetchEvent()
     }, [id])

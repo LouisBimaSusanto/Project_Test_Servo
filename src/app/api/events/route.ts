@@ -74,9 +74,9 @@ export async function GET(request: Request) {
 // POST create event
 export async function POST(request: Request) {
   const body = await request.json()
-  const startDateTime = new Date(`${body.eventDate}T${body.startTime}`)
-  const endDateTime = new Date(`${body.eventDate}T${body.endTime}`)
-
+  const startDateTime = new Date(`${body.eventDate}T${body.startTime}:00+07:00`)
+  const endDateTime = new Date(`${body.eventDate}T${body.endTime}:00+07:00`)
+  
   const newEvent = await prisma.event.create({
     data: {
         title: body.title,
