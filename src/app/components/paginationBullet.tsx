@@ -37,14 +37,12 @@ return (
                 {new Date(event.startTime).toLocaleTimeString("id-ID", {
                     hour: "2-digit",
                     minute: "2-digit",
-                    hourCycle: "h23",
                     timeZone:"Asia/Jakarta"
                 })}{" "}
                 -{" "}
                 {new Date(event.endTime).toLocaleTimeString("id-ID", {
                     hour: "2-digit",
                     minute: "2-digit",
-                    hourCycle: "h23",
                     timeZone:"Asia/Jakarta"
                 })} WIB
                 </div>

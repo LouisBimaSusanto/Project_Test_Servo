@@ -86,14 +86,14 @@ export default function EditEventPage() {
             />
 
             <input
-            type="datetime-local"
+            type="time"
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
             className="w-full p-2 bg-gray-800 rounded"
             />
 
             <input
-            type="datetime-local"
+            type="time"
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
             className="w-full p-2 bg-gray-800 rounded"
