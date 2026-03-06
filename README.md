@@ -1,13 +1,38 @@
-# Project_Test_Servo
+# Project Test Servo
 
-Ini merupakan respitory untuk project testing dari servolution GMS
+Repository ini merupakan project testing untuk sistem event dari Servolution GMS.
 
-Live Demo:
-https://church-event-board.vercel.app
+Website ini menampilkan daftar event dan menyediakan admin panel untuk mengelola data event.
 
-Admin Panel:
-/admin
+## Live Demo
 
-API Endpoints:
+https://project-test-servo.vercel.app/
+
+## Admin Panel
+
+https://project-test-servo.vercel.app/admin
+
+Admin digunakan untuk:
+
+- Menambah event
+- Mengedit event
+- Menghapus event
+
+## API Endpoints
+
+### Get All Events
+
 /api/events
+
+### Get Today's Events
+
 /api/events/today
+
+## Tech Stack
+
+Project ini dibuat menggunakan:
+
+- Next.js
+- Prisma ORM
+- MySQL (Railway)
+- Vercel Deployment
