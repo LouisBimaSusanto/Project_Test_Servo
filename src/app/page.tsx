@@ -3,11 +3,15 @@ import PaginationBullet from "./components/paginationBullet"
 import PromoSlideshow from "./components/promoSlideshow"
 
 async function getEvents(filter?: string) {
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+
   const url = filter
-    ? `http://localhost:3000/api/events?filter=${filter}`
-    : `http://localhost:3000/api/events`
+    ? `${baseUrl}/api/events?filter=${filter}`
+    : `${baseUrl}/api/events`
 
   const res = await fetch(url, { cache: "no-store" })
+
   return res.json()
 }
 
