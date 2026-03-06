@@ -108,7 +108,7 @@ return (
         />
 
         <input
-            type="datetime-local"
+            type="time"
             placeholder="Start Time"
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
@@ -116,7 +116,7 @@ return (
         />
 
         <input
-            type="datetime-local"
+            type="time"
             placeholder="End Time"
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
