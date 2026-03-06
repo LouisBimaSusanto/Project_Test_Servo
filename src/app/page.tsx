@@ -3,16 +3,18 @@ import PaginationBullet from "./components/paginationBullet"
 import PromoSlideshow from "./components/promoSlideshow"
 
 async function getEvents(filter?: string) {
-
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-
-  const url = filter
-    ? `${baseUrl}/api/events?filter=${filter}`
-    : `${baseUrl}/api/events`
-
-  const res = await fetch(url, { cache: "no-store" })
-
-  return res.json()
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  
+  try {
+    const url = filter ? `${baseUrl}/api/events?filter=${filter}` : `${baseUrl}/api/events`;
+    const res = await fetch(url, { cache: "no-store" });
+    
+    if (!res.ok) return []; // Kembalikan array kosong jika gagal
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return []; // Proteksi agar tidak exception
+  }
 }
 
 export default async function Home({

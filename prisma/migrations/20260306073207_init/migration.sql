@@ -3,7 +3,7 @@ CREATE TABLE `Event` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(191) NOT NULL,
     `location` VARCHAR(191) NOT NULL,
-    `floor` VARCHAR(191) NOT NULL,
+    `floor` INTEGER NOT NULL,
     `eventDate` DATETIME(3) NOT NULL,
     `startTime` DATETIME(3) NOT NULL,
     `endTime` DATETIME(3) NOT NULL,
